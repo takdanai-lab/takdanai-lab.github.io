@@ -7,322 +7,403 @@
 <meta name="description" content="เรซูเม่ออนไลน์ของทักษ์ดนัย บุญชู — IT Support, Network Administrator, Developer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #fdfdfc;
-    --ink: #14151a;
-    --ink-muted: #52565c;
-    --ink-faint: #83878d;
-    --line: #dfdfdc;
-    --line-strong: #14151a;
+    --page-bg: #eef0f2;
+    --card: #1f2430;
+    --card-alt: #262c3a;
+    --card-alt-2: #2c3342;
+    --accent: #3ecf8e;
+    --accent-soft: rgba(62,207,142,.16);
+    --accent-ink: #0f2a20;
+    --ink: #eef1f4;
+    --ink-muted: #a3aab8;
+    --ink-faint: #6d7484;
+    --line: rgba(255,255,255,.09);
+    --line-soft: rgba(255,255,255,.05);
   }
 
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #121212;
-      --ink: #f1f1ef;
-      --ink-muted: #adb0b4;
-      --ink-faint: #82858a;
-      --line: #2c2c2b;
-      --line-strong: #f1f1ef;
-    }
+    :root:not([data-theme="light"]) { --page-bg: #0f1013; }
   }
-
-  :root[data-theme="dark"] {
-    --bg: #121212;
-    --ink: #f1f1ef;
-    --ink-muted: #adb0b4;
-    --ink-faint: #82858a;
-    --line: #2c2c2b;
-    --line-strong: #f1f1ef;
-  }
+  :root[data-theme="dark"] { --page-bg: #0f1013; }
 
   * { box-sizing: border-box; }
 
   body {
-    background: var(--bg);
+    background: var(--page-bg);
     color: var(--ink);
     font-family: "Sarabun", "Noto Sans Thai", system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.8;
-    padding: 0 20px;
-    padding-block: 64px;
+    padding: 0 16px;
+    padding-block: 40px;
   }
 
-  .page {
-    max-width: 640px;
+  h1, h2, h3 { font-family: "Prompt", "Sarabun", sans-serif; text-wrap: balance; margin: 0; }
+
+  .card {
+    max-width: 900px;
     margin: 0 auto;
-  }
-
-  h1, h2, h3 {
-    font-family: "Taviraj", "Sarabun", serif;
-    font-weight: 400;
-    text-wrap: balance;
+    background: var(--card);
+    border-radius: 28px;
+    padding: 44px 40px 40px;
+    box-shadow: 0 30px 70px -30px rgba(0,0,0,.45);
   }
 
   /* ---- Header ---- */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: "Prompt", sans-serif;
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: .04em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
   .hero {
-    margin-bottom: 56px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
   }
 
-  .hero h1 {
-    font-size: clamp(34px, 7vw, 46px);
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    margin: 0 0 6px;
+  .avatar {
+    flex: none;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, var(--accent) 0%, #1c8f61 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Prompt", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--accent-ink);
+    letter-spacing: .01em;
+    box-shadow: 0 0 0 4px var(--card), 0 0 0 6px var(--line);
   }
 
-  .hero .role {
-    font-family: "Taviraj", serif;
-    font-size: 17px;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--ink-muted);
-    margin: 0 0 22px;
+  .hero-text { flex: 1 1 260px; min-width: 0; }
+
+  .hero h1 { font-size: clamp(26px, 4.2vw, 34px); font-weight: 700; color: var(--ink); }
+  .hero .th-name { font-size: 15px; color: var(--ink-muted); font-weight: 400; margin-top: 4px; }
+  .role-pill {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: "Prompt", sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--card-alt);
+    border: 1px solid var(--line);
+    padding: 6px 14px;
+    border-radius: 999px;
   }
 
   .contact-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px 0;
-    font-size: 14.5px;
-    color: var(--ink-muted);
+    gap: 10px 22px;
+    padding-top: 22px;
+    margin-top: 4px;
     border-top: 1px solid var(--line);
-    padding-top: 16px;
-  }
-
-  .contact-row a {
+    font-size: 14px;
     color: var(--ink-muted);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
   }
-  .contact-row a:hover { border-bottom-color: var(--ink-muted); }
+  .contact-row a { color: inherit; text-decoration: none; }
+  .contact-row a:hover { color: var(--accent); }
+  .contact-item { display: inline-flex; align-items: center; gap: 8px; }
+  .contact-item svg { width: 15px; height: 15px; stroke: var(--accent); flex: none; }
 
-  .contact-row .sep {
-    margin: 0 10px;
+  /* ---- Layout ---- */
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1.5fr);
+    gap: 32px;
+    margin-top: 34px;
+  }
+  @media (max-width: 620px) {
+    .grid { grid-template-columns: 1fr; gap: 30px; }
+    .card { padding: 32px 20px 28px; border-radius: 22px; }
+  }
+
+  .block { margin-bottom: 30px; }
+  .block:last-child { margin-bottom: 0; }
+
+  .block-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Prompt", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .block-title::before {
+    content: "";
+    width: 16px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+
+  .about p { margin: 0; font-size: 14.5px; line-height: 1.75; color: var(--ink-muted); }
+  .about em { font-style: normal; color: var(--ink); font-weight: 500; }
+
+  .edu-degree { font-family: "Prompt", sans-serif; font-size: 15px; font-weight: 600; color: var(--ink); margin: 0 0 5px; }
+  .edu-meta { font-size: 13.5px; color: var(--ink-muted); margin: 3px 0; line-height: 1.6; }
+  .edu-meta b { color: var(--ink); font-weight: 500; }
+
+  .lang-list { display: flex; flex-direction: column; gap: 12px; }
+  .lang-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 14px; }
+  .lang-row .lang-name { color: var(--ink); font-weight: 500; }
+  .lang-row .lang-level { color: var(--ink-faint); font-size: 12.5px; }
+
+  /* ---- Experience timeline ---- */
+  .timeline { position: relative; padding-left: 22px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px; top: 6px; bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+  .tl-item { position: relative; padding-bottom: 26px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -22px; top: 4px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 2px solid var(--accent);
+  }
+  .tl-date {
+    font-family: "Prompt", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .03em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .tl-title { font-family: "Prompt", sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
+  .tl-company { font-size: 13.5px; color: var(--ink-muted); margin: 3px 0 2px; }
+  .tl-meta { font-size: 12.5px; color: var(--ink-faint); margin: 0 0 10px; }
+  .tl-item ul { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 5px; }
+  .tl-item li { font-size: 13.5px; color: var(--ink-muted); line-height: 1.6; }
+  .tl-item li::marker { color: var(--accent); }
+
+  /* ---- Skills ---- */
+  .skill-groups { display: flex; flex-direction: column; gap: 16px; }
+  .skill-group-label {
+    font-family: "Prompt", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-size: 12.5px;
+    color: var(--ink);
+    background: var(--card-alt);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  footer {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
     color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .print-btn {
-    margin-top: 18px;
     background: none;
-    border: 1px solid var(--line-strong);
-    color: var(--ink);
-    font-family: "Sarabun", sans-serif;
+    border: 1px solid var(--line);
+    color: var(--ink-muted);
+    font-family: "Prompt", sans-serif;
     font-size: 12px;
-    letter-spacing: 0.04em;
-    padding: 7px 14px;
+    padding: 5px 12px;
+    border-radius: 999px;
     cursor: pointer;
   }
-  .print-btn:hover { background: var(--ink); color: var(--bg); }
-
-  /* ---- Sections ---- */
-  section { margin-bottom: 44px; }
-  section:last-child { margin-bottom: 0; }
-
-  .eyebrow {
-    font-family: "Sarabun", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin: 0 0 20px;
-  }
-
-  .summary p {
-    margin: 0;
-    font-size: 17px;
-    color: var(--ink);
-    max-width: 62ch;
-  }
-
-  .summary em {
-    font-style: normal;
-    color: var(--ink);
-    font-weight: 500;
-    border-bottom: 1px solid var(--line-strong);
-  }
-
-  /* ---- Experience ---- */
-  .job {
-    padding: 22px 0;
-    border-top: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 108px 1fr;
-    gap: 4px 24px;
-  }
-  .job:last-child { border-bottom: 1px solid var(--line); }
-
-  .job-date {
-    font-family: "Taviraj", serif;
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 500;
-    color: var(--ink-muted);
-    padding-top: 3px;
-  }
-
-  .job-title { font-size: 18px; font-weight: 600; margin: 0; }
-  .job-company { display: block; font-size: 14.5px; color: var(--ink-muted); font-weight: 400; margin-top: 3px; }
-  .job-meta { font-size: 13px; color: var(--ink-faint); margin: 7px 0 12px; }
-
-  .job ul {
-    margin: 0;
-    padding-left: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .job li { font-size: 15px; color: var(--ink); }
-
-  @media (max-width: 480px) {
-    .job { grid-template-columns: 1fr; gap: 6px; }
-    .job-date { padding-top: 0; }
-  }
-
-  /* ---- Skills / Education / Languages: plain lists ---- */
-  .plain-grid {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 12px 24px;
-    font-size: 15px;
-  }
-  .plain-grid dt {
-    color: var(--ink-muted);
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.03em;
-    padding-top: 2px;
-  }
-  .plain-grid dd { margin: 0; color: var(--ink); }
-
-  @media (max-width: 480px) {
-    .plain-grid { grid-template-columns: 1fr; gap: 3px 0; }
-    .plain-grid dt { margin-top: 10px; }
-  }
-
-  .edu-degree { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
-  .edu-meta { color: var(--ink-muted); font-size: 14px; margin: 2px 0; }
-
-  footer {
-    margin-top: 56px;
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
-    font-size: 13px;
-    color: var(--ink-faint);
-    letter-spacing: 0.02em;
-  }
+  .print-btn:hover { color: var(--accent); border-color: var(--accent); }
 
   @media print {
-    body { background: #fff; color: #000; padding: 0; }
+    body { background: #fff; padding: 0; }
+    .card { box-shadow: none; border-radius: 0; }
     .print-btn { display: none; }
   }
 </style>
 
 </head>
 <body>
-<div class="page">
-  <header class="hero">
-    <h1>ทักษ์ดนัย บุญชู</h1>
-    <p class="role">IT Support · Network Administrator · Developer</p>
-    <div class="contact-row">
+<div class="card">
+  <span class="badge">เรซูเม่</span>
+
+  <div class="hero">
+    <div class="avatar">ทด</div>
+    <div class="hero-text">
+      <h1>Takdanai Boonchu</h1>
+      <p class="th-name">ทักษ์ดนัย บุญชู</p>
+      <span class="role-pill">IT Support · Network Admin · Developer</span>
+    </div>
+  </div>
+
+  <div class="contact-row">
+    <span class="contact-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <a href="tel:0930365831">093-036-5831</a>
-      <span class="sep">/</span>
+    </span>
+    <span class="contact-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
       <a href="mailto:Takdanaibon@gmail.com">Takdanaibon@gmail.com</a>
-      <span class="sep">/</span>
+    </span>
+    <span class="contact-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       <span>นครสวรรค์, ประเทศไทย</span>
-    </div>
+    </span>
     <button class="print-btn" onclick="window.print()">พิมพ์ / บันทึกเป็น PDF</button>
-  </header>
+  </div>
 
-  <section class="summary">
-    <p class="eyebrow">ประวัติโดยย่อ</p>
-    <p>
-      ดูแลระบบ IT ครบวงจรในองค์กร ทั้งด้านเครือข่าย เซิร์ฟเวอร์/NAS
-      กล้องวงจรปิด คอมพิวเตอร์และ IT</em> และระบบสนับสนุนงานพัสดุ/จัดซื้อ
-      แก้ไขปัญหาหน้างานให้ผู้ใช้งานและบริหารจัดการระบบด้วยตนเองแบบครบวงจร
-    </p>
-  </section>
+  <div class="grid">
+    <!-- LEFT COLUMN -->
+    <div>
+      <div class="block about">
+        <p class="block-title">ประวัติส่วนตัว</p>
+        <p>
+          ดูแลระบบ IT ครบวงจรในองค์กร ทั้งเครือข่าย เซิร์ฟเวอร์/NAS กล้องวงจรปิด
+          คอมพิวเตอร์และเครื่องพิมพ์ พร้อมพัฒนา<em>ระบบบริหารจัดการทรัพย์สิน IT</em>
+          และระบบสนับสนุนงานพัสดุ/จัดซื้อด้วยตนเองแบบครบวงจร
+        </p>
+      </div>
 
-  <section>
-    <p class="eyebrow">ประสบการณ์ทำงาน</p>
+      <div class="block">
+        <p class="block-title">ประวัติการศึกษา</p>
+        <p class="edu-degree">ปริญญาตรี เทคโนโลยีสารสนเทศ</p>
+        <p class="edu-meta"><b>มหาวิทยาลัยราชภัฏนครสวรรค์</b><br>คณะวิทยาศาสตร์และเทคโนโลยี</p>
+        <p class="edu-meta">จบการศึกษาปี 2565 · เกรดเฉลี่ย 2.89</p>
+      </div>
 
-    <div class="job">
-      <div class="job-date">ก.ย. 2569 –<br>ปัจจุบัน</div>
-      <div>
-        <h3 class="job-title">IT Support</h3>
-        <span class="job-company">บริษัท บีเคเค แอคเซสซอรี่ (BKK accessories)</span>
-        <p class="job-meta">เงินเดือน 20,000 บาท · นครสวรรค์</p>
-        <ul>
-          <li>พัฒนาโปรแกรมระบบบริหารจัดการครุภัณฑ์ (IT Asset Management System) ใช้งานภายในบริษัท</li>
-          <li>ดูแลและจัดการอุปกรณ์ IT ทั้งหมดขององค์กร</li>
-          <li>แก้ไขปัญหาด้าน IT ให้กับผู้ใช้งาน (User Support)</li>
-        </ul>
+      <div class="block">
+        <p class="block-title">ทักษะภาษา</p>
+        <div class="lang-list">
+          <div class="lang-row"><span class="lang-name">ภาษาไทย</span><span class="lang-level">ภาษาแม่</span></div>
+          <div class="lang-row"><span class="lang-name">ภาษาอังกฤษ</span><span class="lang-level">อ่าน/เขียนเชิงเทคนิค</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="job">
-      <div class="job-date">ก.พ. 2569 –<br>ส.ค. 2569</div>
-      <div>
-        <h3 class="job-title">Supervisor (IT)</h3>
-        <span class="job-company">บริษัท เคลฟเวอร์ กู๊ดส์ จำกัด</span>
-        <p class="job-meta">เงินเดือน 15,000 บาท · เก้าเลี้ยว, นครสวรรค์</p>
-        <ul>
-          <li>ดูแลและจัดการระบบเครือข่าย (Network), กล้องวงจรปิด, เซิร์ฟเวอร์และ NAS</li>
-          <li>ดูแลคอมพิวเตอร์ เครื่องพิมพ์ และอีเมลบริษัท</li>
-          <li>แก้ไขปัญหาเชิงเทคนิคให้กับผู้ใช้งานในองค์กร</li>
-        </ul>
+    <!-- RIGHT COLUMN -->
+    <div>
+      <div class="block">
+        <p class="block-title">ประสบการณ์ทำงาน</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">ก.ย. 2569 – ปัจจุบัน</div>
+            <h3 class="tl-title">IT Support</h3>
+            <p class="tl-company">บริษัท บีเคเค แอคเซสซอรี่ (BKK accessories)</p>
+            <p class="tl-meta">เงินเดือน 20,000 บาท · นครสวรรค์</p>
+            <ul>
+              <li>พัฒนาโปรแกรมระบบบริหารจัดการครุภัณฑ์ (IT Asset Management System) ใช้งานภายในบริษัท</li>
+              <li>ดูแลและจัดการอุปกรณ์ IT ทั้งหมดขององค์กร</li>
+              <li>แก้ไขปัญหาด้าน IT ให้กับผู้ใช้งาน (User Support)</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">ก.พ. 2569 – ส.ค. 2569</div>
+            <h3 class="tl-title">Supervisor (IT)</h3>
+            <p class="tl-company">บริษัท เคลฟเวอร์ กู๊ดส์ จำกัด</p>
+            <p class="tl-meta">เงินเดือน 15,000 บาท · เก้าเลี้ยว, นครสวรรค์</p>
+            <ul>
+              <li>ดูแลและจัดการระบบเครือข่าย (Network), กล้องวงจรปิด, เซิร์ฟเวอร์และ NAS</li>
+              <li>ดูแลคอมพิวเตอร์ เครื่องพิมพ์ และอีเมลบริษัท</li>
+              <li>แก้ไขปัญหาเชิงเทคนิคให้กับผู้ใช้งานในองค์กร</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">ก.พ. 2567 – ก.ย. 2568</div>
+            <h3 class="tl-title">พนักงานขาย</h3>
+            <p class="tl-company">บริษัท ทีจี เซลลูล่าเวิลด์ จำกัด</p>
+            <p class="tl-meta">เงินเดือน 10,250 บาท · เมืองนครสวรรค์, นครสวรรค์</p>
+            <ul>
+              <li>ขายสินค้าและให้คำปรึกษาด้านอุปกรณ์ IT แก่ลูกค้า</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="block-title">ทักษะซอฟต์แวร์ &amp; เทคนิค</p>
+        <div class="skill-groups">
+          <div>
+            <p class="skill-group-label">Network</p>
+            <div class="chips">
+              <span class="chip">TP-Link Omada</span>
+              <span class="chip">VLAN</span>
+              <span class="chip">Captive Portal</span>
+              <span class="chip">ACL</span>
+              <span class="chip">Inter-VLAN Routing</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-label">Server &amp; Storage</p>
+            <div class="chips">
+              <span class="chip">Synology NAS</span>
+              <span class="chip">Backup</span>
+              <span class="chip">ระบบกล้องวงจรปิด (NVR)</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-label">Programming</p>
+            <div class="chips">
+              <span class="chip">Node.js</span>
+              <span class="chip">React</span>
+              <span class="chip">Google Apps Script</span>
+              <span class="chip">Laravel (PHP)</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">MySQL/MariaDB</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-label">IT Operations</p>
+            <div class="chips">
+              <span class="chip">IT Asset Management</span>
+              <span class="chip">User Support</span>
+              <span class="chip">AnyDesk</span>
+              <span class="chip">PowerShell</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="job">
-      <div class="job-date">ก.พ. 2567 –<br>ก.ย. 2568</div>
-      <div>
-        <h3 class="job-title">พนักงานขาย</h3>
-        <span class="job-company">บริษัท ทีจี เซลลูล่าเวิลด์ จำกัด</span>
-        <p class="job-meta">เงินเดือน 10,250 บาท · เมืองนครสวรรค์, นครสวรรค์</p>
-        <ul>
-          <li>ขายสินค้าและให้คำปรึกษาด้านอุปกรณ์ IT แก่ลูกค้า</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <p class="eyebrow">ทักษะ</p>
-    <dl class="plain-grid">
-      <dt>Network</dt>
-      <dd>TP-Link Omada, VLAN, Captive Portal, ACL, Inter-VLAN Routing</dd>
-      <dt>Server &amp; Storage</dt>
-      <dd>Synology NAS, Backup, ระบบกล้องวงจรปิด (NVR)</dd>
-      <dt>Programming</dt>
-      <dd>Node.js, React, Google Apps Script, Laravel (PHP), SQLite, MySQL/MariaDB</dd>
-      <dt>IT Operations</dt>
-      <dd>IT Asset Management, User Support, AnyDesk, PowerShell</dd>
-    </dl>
-  </section>
-
-  <section>
-    <p class="eyebrow">การศึกษา</p>
-    <p class="edu-degree">ปริญญาตรี สาขาเทคโนโลยีสารสนเทศ</p>
-    <p class="edu-meta">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยราชภัฏนครสวรรค์</p>
-    <p class="edu-meta">จบการศึกษาปี 2565 · เกรดเฉลี่ย 2.89</p>
-  </section>
-
-  <section>
-    <p class="eyebrow">ภาษา</p>
-    <dl class="plain-grid">
-      <dt>ไทย</dt>
-      <dd>ภาษาแม่</dd>
-      <dt>อังกฤษ</dt>
-      <dd>อ่าน/เขียนเชิงเทคนิค</dd>
-    </dl>
-  </section>
-
-  <footer>อัปเดตล่าสุด กันยายน 2569 · ทักษ์ดนัย บุญชู</footer>
+  <footer>
+    <span>อัปเดตล่าสุด กันยายน 2569 · ทักษ์ดนัย บุญชู</span>
+  </footer>
 </div>
 </body>
 </html>
