@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ทักษ์ดนัย บุญชู</title>
+<meta name="description" content="เรซูเม่ออนไลน์ของทักษ์ดนัย บุญชู — IT Support, Network Administrator, Developer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdfdfc;
+    --ink: #17181a;
+    --ink-muted: #6b6e72;
+    --ink-faint: #a3a6aa;
+    --line: #e2e2e0;
+    --line-strong: #17181a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121212;
+      --ink: #ececea;
+      --ink-muted: #9a9c9f;
+      --ink-faint: #6b6d70;
+      --line: #2c2c2b;
+      --line-strong: #ececea;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #121212;
+    --ink: #ececea;
+    --ink-muted: #9a9c9f;
+    --ink-faint: #6b6d70;
+    --line: #2c2c2b;
+    --line-strong: #ececea;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Sarabun", "Noto Sans Thai", system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.75;
+    padding: 0 20px;
+    padding-block: 64px;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  h1, h2, h3 {
+    font-family: "Taviraj", "Sarabun", serif;
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  /* ---- Header ---- */
+  .hero {
+    margin-bottom: 56px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 7vw, 46px);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    margin: 0 0 6px;
+  }
+
+  .hero .role {
+    font-family: "Taviraj", serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0 0 22px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+
+  .contact-row a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .contact-row a:hover { border-bottom-color: var(--ink-muted); }
+
+  .contact-row .sep {
+    margin: 0 10px;
+    color: var(--ink-faint);
+  }
+
+  .print-btn {
+    margin-top: 18px;
+    background: none;
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+    font-family: "Sarabun", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 7px 14px;
+    cursor: pointer;
+  }
+  .print-btn:hover { background: var(--ink); color: var(--bg); }
+
+  /* ---- Sections ---- */
+  section { margin-bottom: 44px; }
+  section:last-child { margin-bottom: 0; }
+
+  .eyebrow {
+    font-family: "Sarabun", sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 20px;
+  }
+
+  .summary p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--ink);
+    max-width: 62ch;
+  }
+
+  .summary em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 500;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  /* ---- Experience ---- */
+  .job {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 4px 24px;
+  }
+  .job:last-child { border-bottom: 1px solid var(--line); }
+
+  .job-date {
+    font-family: "Taviraj", serif;
+    font-size: 13.5px;
+    font-style: italic;
+    color: var(--ink-faint);
+    padding-top: 3px;
+  }
+
+  .job-title { font-size: 17px; font-weight: 500; margin: 0; }
+  .job-company { display: block; font-size: 13.5px; color: var(--ink-muted); font-weight: 300; margin-top: 2px; }
+  .job-meta { font-size: 12.5px; color: var(--ink-faint); margin: 6px 0 12px; }
+
+  .job ul {
+    margin: 0;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .job li { font-size: 14.5px; color: var(--ink); }
+
+  @media (max-width: 480px) {
+    .job { grid-template-columns: 1fr; gap: 6px; }
+    .job-date { padding-top: 0; }
+  }
+
+  /* ---- Skills / Education / Languages: plain lists ---- */
+  .plain-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 10px 24px;
+    font-size: 14.5px;
+  }
+  .plain-grid dt {
+    color: var(--ink-faint);
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    padding-top: 2px;
+  }
+  .plain-grid dd { margin: 0; color: var(--ink); }
+
+  @media (max-width: 480px) {
+    .plain-grid { grid-template-columns: 1fr; gap: 3px 0; }
+    .plain-grid dt { margin-top: 10px; }
+  }
+
+  .edu-degree { font-size: 15px; margin: 0 0 4px; }
+  .edu-meta { color: var(--ink-muted); font-size: 13.5px; margin: 2px 0; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    body { background: #fff; color: #000; padding: 0; }
+    .print-btn { display: none; }
+  }
+</style>
+
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <h1>ทักษ์ดนัย บุญชู</h1>
+    <p class="role">IT Support · Network Administrator · Developer</p>
+    <div class="contact-row">
+      <a href="tel:0930365831">093-036-5831</a>
+      <span class="sep">/</span>
+      <a href="mailto:Takdanaibon@gmail.com">Takdanaibon@gmail.com</a>
+      <span class="sep">/</span>
+      <span>นครสวรรค์, ประเทศไทย</span>
+    </div>
+    <button class="print-btn" onclick="window.print()">พิมพ์ / บันทึกเป็น PDF</button>
+  </header>
+
+  <section class="summary">
+    <p class="eyebrow">ประวัติโดยย่อ</p>
+    <p>
+      ดูแลระบบ IT ครบวงจรในองค์กร ทั้งด้านเครือข่าย เซิร์ฟเวอร์/NAS
+      กล้องวงจรปิด คอมพิวเตอร์และเครื่องพิมพ์ พร้อมพัฒนาโปรแกรมใช้งานภายในองค์กรด้วยตนเอง
+      โดยเฉพาะ<em>ระบบบริหารจัดการทรัพย์สิน IT</em> และระบบสนับสนุนงานพัสดุ/จัดซื้อ
+      แก้ไขปัญหาหน้างานให้ผู้ใช้งานและบริหารจัดการระบบด้วยตนเองแบบครบวงจร
+    </p>
+  </section>
+
+  <section>
+    <p class="eyebrow">ประสบการณ์ทำงาน</p>
+
+    <div class="job">
+      <div class="job-date">ก.ย. 2569 –<br>ปัจจุบัน</div>
+      <div>
+        <h3 class="job-title">IT Support</h3>
+        <span class="job-company">บริษัท บีเคเค แอคเซสซอรี่ (BKK accessories)</span>
+        <p class="job-meta">เงินเดือน 20,000 บาท · นครสวรรค์</p>
+        <ul>
+          <li>พัฒนาโปรแกรมระบบบริหารจัดการครุภัณฑ์ (IT Asset Management System) ใช้งานภายในบริษัท</li>
+          <li>ดูแลและจัดการอุปกรณ์ IT ทั้งหมดขององค์กร</li>
+          <li>แก้ไขปัญหาด้าน IT ให้กับผู้ใช้งาน (User Support)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-date">ก.พ. 2569 –<br>ส.ค. 2569</div>
+      <div>
+        <h3 class="job-title">Supervisor (IT)</h3>
+        <span class="job-company">บริษัท เคลฟเวอร์ กู๊ดส์ จำกัด</span>
+        <p class="job-meta">เงินเดือน 15,000 บาท · เก้าเลี้ยว, นครสวรรค์</p>
+        <ul>
+          <li>ดูแลและจัดการระบบเครือข่าย (Network), กล้องวงจรปิด, เซิร์ฟเวอร์และ NAS</li>
+          <li>ดูแลคอมพิวเตอร์ เครื่องพิมพ์ และอีเมลบริษัท</li>
+          <li>แก้ไขปัญหาเชิงเทคนิคให้กับผู้ใช้งานในองค์กร</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-date">ก.พ. 2567 –<br>ก.ย. 2568</div>
+      <div>
+        <h3 class="job-title">พนักงานขาย</h3>
+        <span class="job-company">บริษัท ทีจี เซลลูล่าเวิลด์ จำกัด</span>
+        <p class="job-meta">เงินเดือน 10,250 บาท · เมืองนครสวรรค์, นครสวรรค์</p>
+        <ul>
+          <li>ขายสินค้าและให้คำปรึกษาด้านอุปกรณ์ IT แก่ลูกค้า</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">ทักษะ</p>
+    <dl class="plain-grid">
+      <dt>Network</dt>
+      <dd>TP-Link Omada, VLAN, Captive Portal, ACL, Inter-VLAN Routing</dd>
+      <dt>Server &amp; Storage</dt>
+      <dd>Synology NAS, Backup, ระบบกล้องวงจรปิด (NVR)</dd>
+      <dt>Programming</dt>
+      <dd>Node.js, React, Google Apps Script, Laravel (PHP), SQLite, MySQL/MariaDB</dd>
+      <dt>IT Operations</dt>
+      <dd>IT Asset Management, User Support, AnyDesk, PowerShell</dd>
+    </dl>
+  </section>
+
+  <section>
+    <p class="eyebrow">การศึกษา</p>
+    <p class="edu-degree">ปริญญาตรี สาขาเทคโนโลยีสารสนเทศ</p>
+    <p class="edu-meta">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยราชภัฏนครสวรรค์</p>
+    <p class="edu-meta">จบการศึกษาปี 2565 · เกรดเฉลี่า 2.89</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">ภาษา</p>
+    <dl class="plain-grid">
+      <dt>ไทย</dt>
+      <dd>ภาษาแม่</dd>
+      <dt>อังกฤษ</dt>
+      <dd>อ่าน/เขียนเชิงเทคนิค</dd>
+    </dl>
+  </section>
+
+  <footer>อัปเดตล่าสุด กันยายน 2569 · ทักษ์ดนัย บุญชู</footer>
+</div>
+</body>
+</html>
