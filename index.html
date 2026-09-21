@@ -11,31 +11,31 @@
 <style>
   :root {
     --bg: #fdfdfc;
-    --ink: #17181a;
-    --ink-muted: #6b6e72;
-    --ink-faint: #a3a6aa;
-    --line: #e2e2e0;
-    --line-strong: #17181a;
+    --ink: #14151a;
+    --ink-muted: #52565c;
+    --ink-faint: #83878d;
+    --line: #dfdfdc;
+    --line-strong: #14151a;
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #121212;
-      --ink: #ececea;
-      --ink-muted: #9a9c9f;
-      --ink-faint: #6b6d70;
+      --ink: #f1f1ef;
+      --ink-muted: #adb0b4;
+      --ink-faint: #82858a;
       --line: #2c2c2b;
-      --line-strong: #ececea;
+      --line-strong: #f1f1ef;
     }
   }
 
   :root[data-theme="dark"] {
     --bg: #121212;
-    --ink: #ececea;
-    --ink-muted: #9a9c9f;
-    --ink-faint: #6b6d70;
+    --ink: #f1f1ef;
+    --ink-muted: #adb0b4;
+    --ink-faint: #82858a;
     --line: #2c2c2b;
-    --line-strong: #ececea;
+    --line-strong: #f1f1ef;
   }
 
   * { box-sizing: border-box; }
@@ -44,9 +44,9 @@
     background: var(--bg);
     color: var(--ink);
     font-family: "Sarabun", "Noto Sans Thai", system-ui, sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.75;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.8;
     padding: 0 20px;
     padding-block: 64px;
   }
@@ -76,8 +76,8 @@
 
   .hero .role {
     font-family: "Taviraj", serif;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 17px;
+    font-weight: 400;
     font-style: italic;
     color: var(--ink-muted);
     margin: 0 0 22px;
@@ -87,10 +87,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 4px 0;
-    font-size: 13.5px;
+    font-size: 14.5px;
     color: var(--ink-muted);
     border-top: 1px solid var(--line);
-    padding-top: 14px;
+    padding-top: 16px;
   }
 
   .contact-row a {
@@ -124,17 +124,17 @@
 
   .eyebrow {
     font-family: "Sarabun", sans-serif;
-    font-size: 11.5px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--ink-muted);
     margin: 0 0 20px;
   }
 
   .summary p {
     margin: 0;
-    font-size: 16px;
+    font-size: 17px;
     color: var(--ink);
     max-width: 62ch;
   }
@@ -158,24 +158,25 @@
 
   .job-date {
     font-family: "Taviraj", serif;
-    font-size: 13.5px;
+    font-size: 14px;
     font-style: italic;
-    color: var(--ink-faint);
+    font-weight: 500;
+    color: var(--ink-muted);
     padding-top: 3px;
   }
 
-  .job-title { font-size: 17px; font-weight: 500; margin: 0; }
-  .job-company { display: block; font-size: 13.5px; color: var(--ink-muted); font-weight: 300; margin-top: 2px; }
-  .job-meta { font-size: 12.5px; color: var(--ink-faint); margin: 6px 0 12px; }
+  .job-title { font-size: 18px; font-weight: 600; margin: 0; }
+  .job-company { display: block; font-size: 14.5px; color: var(--ink-muted); font-weight: 400; margin-top: 3px; }
+  .job-meta { font-size: 13px; color: var(--ink-faint); margin: 7px 0 12px; }
 
   .job ul {
     margin: 0;
-    padding-left: 16px;
+    padding-left: 18px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
   }
-  .job li { font-size: 14.5px; color: var(--ink); }
+  .job li { font-size: 15px; color: var(--ink); }
 
   @media (max-width: 480px) {
     .job { grid-template-columns: 1fr; gap: 6px; }
@@ -186,12 +187,13 @@
   .plain-grid {
     display: grid;
     grid-template-columns: 140px 1fr;
-    gap: 10px 24px;
-    font-size: 14.5px;
+    gap: 12px 24px;
+    font-size: 15px;
   }
   .plain-grid dt {
-    color: var(--ink-faint);
-    font-size: 12.5px;
+    color: var(--ink-muted);
+    font-weight: 600;
+    font-size: 13px;
     letter-spacing: 0.03em;
     padding-top: 2px;
   }
@@ -202,14 +204,14 @@
     .plain-grid dt { margin-top: 10px; }
   }
 
-  .edu-degree { font-size: 15px; margin: 0 0 4px; }
-  .edu-meta { color: var(--ink-muted); font-size: 13.5px; margin: 2px 0; }
+  .edu-degree { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
+  .edu-meta { color: var(--ink-muted); font-size: 14px; margin: 2px 0; }
 
   footer {
     margin-top: 56px;
     padding-top: 18px;
     border-top: 1px solid var(--line);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--ink-faint);
     letter-spacing: 0.02em;
   }
@@ -240,8 +242,7 @@
     <p class="eyebrow">ประวัติโดยย่อ</p>
     <p>
       ดูแลระบบ IT ครบวงจรในองค์กร ทั้งด้านเครือข่าย เซิร์ฟเวอร์/NAS
-      กล้องวงจรปิด คอมพิวเตอร์และเครื่องพิมพ์ พร้อมพัฒนาโปรแกรมใช้งานภายในองค์กรด้วยตนเอง
-      โดยเฉพาะ<em>ระบบบริหารจัดการทรัพย์สิน IT</em> และระบบสนับสนุนงานพัสดุ/จัดซื้อ
+      กล้องวงจรปิด คอมพิวเตอร์และ IT</em> และระบบสนับสนุนงานพัสดุ/จัดซื้อ
       แก้ไขปัญหาหน้างานให้ผู้ใช้งานและบริหารจัดการระบบด้วยตนเองแบบครบวงจร
     </p>
   </section>
@@ -308,7 +309,7 @@
     <p class="eyebrow">การศึกษา</p>
     <p class="edu-degree">ปริญญาตรี สาขาเทคโนโลยีสารสนเทศ</p>
     <p class="edu-meta">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยราชภัฏนครสวรรค์</p>
-    <p class="edu-meta">จบการศึกษาปี 2565 · เกรดเฉลี่า 2.89</p>
+    <p class="edu-meta">จบการศึกษาปี 2565 · เกรดเฉลี่ย 2.89</p>
   </section>
 
   <section>
